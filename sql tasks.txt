@@ -11,3 +11,11 @@ where price<500
 select distinct maker
 from product
 where type='printer'
+
+3.
+
+Найдите номер модели, объем памяти и размеры экранов ПК-блокнотов, цена которых превышает 1000 дол.
+
+select distinct model, ram, screen
+from laptop
+where price>1000
