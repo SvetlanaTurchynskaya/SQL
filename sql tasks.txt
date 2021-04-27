@@ -101,3 +101,23 @@ Select hd
 from pc
 group by hd
 having count(model)>=2
+
+16.Найдите пары моделей PC, имеющих одинаковые скорость и RAM. В результате каждая пара указывается только один раз, т.е. (i,j), но не (j,i), 
+Порядок вывода: модель с большим номером, модель с меньшим номером, скорость и RAM.
+
+select distinct a.model, b.model, a.speed, a.ram
+from pc as a, pc b
+where a.speed=b.speed and a.ram=b.ram and a.model>b.model
+
+17.Найдите модели ПК-блокнотов, скорость которых меньше скорости каждого из ПК.
+Вывести: type, model, speed
+
+select distinct type, l.model, l.speed
+from product p join laptop l on p.model=l.model 
+where speed<all (select speed from pc)
+
+18.Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+
+select distinct p.maker, pr.price
+from product p join printer pr on p.model=pr.model
+where pr.color='y' and price=(select min(price) as SmallestPrice from printer where color='y')
