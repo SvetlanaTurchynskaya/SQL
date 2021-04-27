@@ -63,3 +63,9 @@ where type='laptop'
 
 =======
 >>>>>>> parent of 2b35e51 (three tasks)
+
+9.Найдите производителей ПК с процессором не менее 450 Мгц. Вывести: Maker
+
+select distinct p.maker
+from pc join product p on pc.model=p.model
+where pc.speed>=450
