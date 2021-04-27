@@ -11,6 +11,7 @@ where price<500
 select distinct maker
 from product
 where type='printer'
+<<<<<<< HEAD
 
 3.Найдите номер модели, объем памяти и размеры экранов ПК-блокнотов, цена которых превышает 1000 дол.
 
@@ -60,3 +61,5 @@ select maker
 from product
 where type='laptop'
 
+=======
+>>>>>>> parent of 2b35e51 (three tasks)
