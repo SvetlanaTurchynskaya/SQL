@@ -128,3 +128,11 @@ where pr.color='y' and price=(select min(price) as SmallestPrice from printer wh
 select maker, avg(l.screen)
 from product p join laptop l on p.model=l.model
 group by maker
+
+20.Найдите производителей, выпускающих по меньшей мере три различных модели ПК. Вывести: Maker, число моделей ПК.
+
+select maker, count(*) as count_model
+from product 
+where type='pc'
+group by maker
+having count(*)>= 3
