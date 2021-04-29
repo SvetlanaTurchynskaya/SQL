@@ -1,0 +1,8 @@
+
+1.Выведите информацию о id работника, электронной почте и дату, которая была за неделю до трудоустройства для всех работников. 
+Столбец, который будет содержать дату назовите One week before hire date
+
+SELECT employee_id, email, hire_date-7 as "One week before hire date"
+FROM employees
+
+2.
