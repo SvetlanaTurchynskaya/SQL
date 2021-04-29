@@ -144,3 +144,5 @@ Select p.maker, max(pc.price) as max_price
 from product p, pc
 where p.model=pc.model
 group by maker
+
+22.
