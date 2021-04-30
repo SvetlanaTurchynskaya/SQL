@@ -10,3 +10,21 @@ FROM employees
 
 SELECT first_name || '('||job_id||')' as "our_employees"
 FROM employees
+
+3.Выведите следующую информацию из таблицы jobs:
+
+• job_title,
+• выражение в формате: «min = 20080, max = 40000», где 20080 – это минимальная з/п, а 40000 – максимальная.
+Назовите этот столбец info.
+• максимальную з/п и назовите столбец max,
+• новую з/п, которая будет называться new_salary и вычисляться по формуле: max_salary*2-2000.
+
+SELECT job_title, 'min= '||min_salary||', max= '||max_salary as info, max_salary as max, max_salary*2-2000 as new_salary
+FROM jobs
+
+4.Выведите на экран предложение «Peter's dog is very clever», используя одну из двух техник работы с одинарными кавычками.
+
+SELECT q'<Peter's dog is very clever>'
+FROM dual
+
+
